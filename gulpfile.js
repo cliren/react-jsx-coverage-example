@@ -23,7 +23,7 @@ var testWithCoverage = function(sources) {
     istanbul: {
       coverageVariable: "__MY_TEST_COVERAGE__",
       include: /\.(jsx|js)?$/,
-      exclude: /node_modules|specs/
+      exclude: /node_modules|spec/
     },
     coverage: {
       reporters: ["text-summary", "json", "lcov"],
