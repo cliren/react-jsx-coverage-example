@@ -1,6 +1,6 @@
 import React from 'react';
 import TestUtils from 'react/lib/ReactTestUtils';
-import UserProfileLink from '..//UserProfileLink';
+import UserProfileLink from '..//UserProfileLink.jsx';
 import cheerio from "cheerio";
 import should from "should";
 

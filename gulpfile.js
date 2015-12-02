@@ -9,8 +9,6 @@ var gulpJsxCoverage = require("gulp-jsx-coverage");
  */
 
 var testSetup = function() {
-  require("babel/register");
-
   var jsdomDoc = require("jsdom");
 
   global.document = jsdomDoc.jsdom("<!doctype html><html><body></body></html>");
@@ -25,7 +23,7 @@ var testWithCoverage = function(sources) {
     istanbul: {
       coverageVariable: "__MY_TEST_COVERAGE__",
       include: /\.(jsx|js)?$/,
-      exclude: /node_modules|specs/
+      exclude: /node_modules|spec/
     },
     coverage: {
       reporters: ["text-summary", "json", "lcov"],
@@ -41,7 +39,8 @@ var testWithCoverage = function(sources) {
       reporter: "spec"
     },
     babel: {
-      sourceMap: "both"
+        presets: ['es2015', 'react'],
+        sourceMap: 'both'
     }
   });
 };
