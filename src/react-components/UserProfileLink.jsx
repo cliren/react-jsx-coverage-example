@@ -1,17 +1,13 @@
 import React from 'react';
 
-class UserProfileLink extends React.Component {
+const additionalProps = {value: "test"};
+let UserProfileLink = React.createClass({
+  render(){
 
-  render() {
     return (
-      <a href={this.props.linkUrl}>{this.props.linkText}</a>
+      <a href={this.props.linkUrl} {...additionalProps}>{this.props.linkText}</a>
     );
   }
-}
-
-UserProfileLink.propTypes = {
-  linkUrl: React.PropTypes.string.isRequired,
-  linkText: React.PropTypes.string.isRequired
-};
+});
 
 export default UserProfileLink;
